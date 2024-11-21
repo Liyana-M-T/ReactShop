@@ -1,0 +1,28 @@
+.image-container{
+    display: flex;
+}
+.image-list{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    border-radius: 10px;
+}
+
+.image-list img{
+    height: 100px;
+    width: 100px;
+    margin-bottom: 2rem;
+    margin-right: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+.opacity-30 {
+    opacity: 0.3;
+}
+
+.main-image img{
+    height: 370px;
+    width: 370px;
+    border-radius: 10px;
+    margin-left: 3rem;
+}

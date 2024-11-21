@@ -1,0 +1,25 @@
+.banner{
+    display: flex;
+}
+
+.left-section{
+    margin-left: 5.5rem;
+    width: 76%;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: .9rem;
+    row-gap: 2rem;
+}
+
+
+.right-section{
+    border: 1px solid rgb(184, 170, 170);
+    height: 310px;
+    width: 225px;
+    border-radius: 10px;
+    margin-top: 10.2rem;
+    margin-left: 1rem;
+}

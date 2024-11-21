@@ -1,0 +1,27 @@
+
+.categories{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-left: 1rem;
+    padding-top: 1.3rem;
+   
+}
+.categories-hdg{
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0;
+}
+.category-lists{
+    padding: 0;
+}
+
+.category-lists li{
+    font-size: 18px;
+   background-color: rgba(88, 79, 79, .2);
+   padding: .5rem 1rem;
+   margin-bottom: 10px ;
+   cursor: pointer;
+   list-style:  none;
+   
+}

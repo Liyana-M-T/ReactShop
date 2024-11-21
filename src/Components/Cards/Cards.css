@@ -1,0 +1,66 @@
+
+
+.item{
+    height: 550px;
+    width: 350px;
+    border-radius: 10px;
+    border: 1px solid rgb(184, 170, 170) ;
+    padding: 7%;
+}
+
+.description{
+    max-width: 327px;
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;    
+}
+
+.price-text{
+    font-size: 12px;
+    color: gray;
+    margin-top:1.5rem;   
+}
+
+.title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom:0
+}
+.price-tag{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+.description span{
+    font-weight: 800;
+}
+.category-name{
+    border-radius: 15px;
+    font-size: 15px;
+    border: 1px solid ;
+    padding: 2%;
+    margin-top: 1rem;
+}
+
+.item img{
+    height: 55%;
+    width: 100%;
+    border-radius: 10px;   
+}
+
+.item button{
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(11, 5, 79);
+    height: 35px;
+    padding: 0px 16px;
+    font-size: 18px;
+}
+.item .item-bottom{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
