@@ -5,6 +5,7 @@ import { useParams, useSearchParams } from 'react-router-dom'
 import Category from '../Category/Category'
 import Search from '../Search/Search'
 import Cards from '../Cards/Cards'
+import {product_url} from '../../Urls' 
 
 
 const ProductList = () => {
@@ -45,7 +46,7 @@ const ProductList = () => {
 
 
   useEffect(()=>{
-     axios.get().then((response)=>{
+     axios.get(product_url).then((response)=>{
       setData(response.data)
      })
   },[]) 

@@ -3,22 +3,22 @@ import axios from '../../Axios'
 import { useParams,Link } from 'react-router-dom';
 import './DetailPage.css';
 import ImageSlider from '../../Components/ImageSlider/ImageSlider';
+import { product_url,  } from '../../Urls';
+
 
 
 const DetailPage = () => {
     const[product,setProduct]=useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const {id}=useParams();
-    console.log(product,"234");
     
-    useEffect(()=>{
-      console.log(useEffect,'eee');
-      
-      axios.get(id).then((response)=>{
-        setProduct(response.data)
+    useEffect(() => {
+      axios.get(product_url+id).then((response)=>{
+        setProduct(response.data);
       })
-    },[])
-
-  console.log();
+         
+    }, [id]);
   
     
   return (

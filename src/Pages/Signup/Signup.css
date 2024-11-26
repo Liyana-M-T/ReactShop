@@ -21,6 +21,9 @@
     margin-bottom: 2rem;
     color: rgb(107, 107, 201,1);
 }
+.Signup-section{
+    display: flex;
+}
 .Sigup-form input{
     width: 100%;
     padding: 1.3rem;

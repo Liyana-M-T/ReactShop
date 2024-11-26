@@ -41,10 +41,11 @@
     width: 50%;
 }
 .detail-container-right .title{
-    padding-bottom: 3rem;
+    padding-bottom: .5rem;
 }
 .detail-container-right .title p{
     margin-top: 0;
+    margin-bottom: .9rem;
     font-size: 36px;
     font-weight: 600;
 }

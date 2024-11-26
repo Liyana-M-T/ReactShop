@@ -2,7 +2,9 @@ import React,{useEffect, useState} from 'react'
 import './ImageSlider.css'
 
 const ImageSlider = ({imageList}) => {
-  const[imageIndex,setImageIndex]=useState(0)
+  const[imageIndex,setImageIndex]=useState(0);
+  console.log(imageList,"imageList");
+  
   return (
     <div className='image-container'>
       <div className='image-list'>

@@ -4,11 +4,12 @@ import {faCheck,faTimes,faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { login_url } from '../../Urls';
 
 
 const EMAIL_REGEX=/^[a-zA-Z][a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
 const PWD_REGEX=/^.{8,24}$/;
-const LOGIN_URL='/'
+
 
 
 const Login = () => {
@@ -38,26 +39,28 @@ const Login = () => {
 
     const handleLogin = async (e) => {
       e.preventDefault();
+      const formdata={
+        "email": email,
+        "password": password
+       
+          }
       if (!validEmail || !validPassword) {
         alert('Invalid email or password');
         return;
       }
       try {
         const response = await axios.post(
-          LOGIN_URL,
-          JSON.stringify({ email, password }),
-          {
-            headers: { 'Content-Type': 'application/json' },
-          }
+          login_url,
+          formdata
         );
-        if (response.data.success) {
+        console.log(response,'22');
+        
+        if (response.status===201) {
           alert('Login successful');
           navigate('/');
-        } else {
-          alert('Invalid login credentials');
         }
       } catch (err) {
-        console.error(err);
+       
         alert('An error occurred during login.');
       }
     };
@@ -66,7 +69,7 @@ const Login = () => {
 
   return (
     <div className='login-form'> 
-      <form action="Login"  >
+      <form action="Login" onSubmit={handleLogin} >
       <h4>Login</h4>
       <div className='email-form'>
       <label htmlFor='email'>Email Address</label>

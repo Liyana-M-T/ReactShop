@@ -4,15 +4,19 @@ import {faCheck,faTimes,faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { signup_url } from '../../Urls';
 
 
 const Signup = () => {
 
 const EMAIL_REGEX=/^[a-zA-Z][a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
 const PWD_REGEX=/^.{8,24}$/;
-const SIGNUP_URL='/'
+const AVATAR_URL_REGEX = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(\/.*)?$/;
+
 
 const navigate=useNavigate();
+
+const [name,setName]=useState('');
 
 const [email,setEmail]=useState('');
 const[validEmail,setValidEmail]=useState(false);
@@ -22,6 +26,11 @@ const [emailFocus, setEmailFocus] = useState(false);
 const[password,setPassword]=useState('');
 const[validPassword,setValidPassword]=useState(false);
 const [PasswordFocus, setPasswordFocus] = useState(false);
+
+const[avatar,setAvatar]=useState('');
+const [validAvatar,setValidAvatar]=useState(false)
+
+
 
 
   useEffect(()=>{
@@ -35,36 +44,43 @@ const [PasswordFocus, setPasswordFocus] = useState(false);
     setValidPassword(pwd)
   },[password])
 
+  useEffect(()=>{
+    const avatar_url=AVATAR_URL_REGEX.test(avatar);
+    setValidAvatar(avatar_url)
+  },[avatar])
+
   const handleSignup = async (e) => {
     e.preventDefault();
+    const formdata={
+  "name":name,
+  "email": email,
+  "password": password,
+  "avatar" :avatar
+ 
+    }
     try {
       const response = await axios.post(
-        SIGNUP_URL,
-        JSON.stringify({ email, password }),
-        {
-          headers: { 'Content-Type': 'application/json' },
-        }
+        signup_url,formdata
       );
-      if (response.data.success) {
-        navigate('/');
-      } else {
-        alert('Signup failed. Try again.');
-      }
+      console.log(response,"11");
+      if (response.status === 201) {
+
+      navigate('/login');
+      
+      } 
     } catch (err) {
-      console.error(err);
       alert('An error occurred during signup.');
     }
   };
 
   return (
-    <div>
+    
     <div className='Sigup-form'> 
-      <form action="Signup" onSubmit={ handleSignup}  >
+      <form action="Signup" onSubmit={handleSignup}  >
       <h4>SignUp</h4>
-      
-      <div className='input-section'>
-      <label htmlFor='Firstname'>First Name</label>
-      <input id='Firstname' type='text'/>
+    
+      <label htmlFor='Name'>Name</label>
+      <input id='Name' type='text' onChange={(e)=>setName(e.target.value)}/>
       <div className='email-form'>
       <label htmlFor='email'>Email Address</label>
         <input id='email' type="text" onChange={(e)=>
@@ -83,10 +99,6 @@ const [PasswordFocus, setPasswordFocus] = useState(false);
           )}
           
           </div>
-          
-          
-          <label htmlFor='Lastname'>Last Name</label>
-      <input id='Lastname' type='text'/>
         
         <label htmlFor='password'>Password</label>
         <input id='password' type='password'
@@ -98,15 +110,21 @@ const [PasswordFocus, setPasswordFocus] = useState(false);
           {PasswordFocus && password && !validPassword&&(
             <p>*Must be 8 characters or more</p>
           )}
-      </div>
-       
+
+          <label htmlFor='avatar'>Avatar</label>
+          <input type='text' onChange={(e)=>setAvatar(e.target.value)}></input>
+          
+    
+     
+
+
        <div className='btns'>
         <button  className='login-btn' onClick={()=>navigate('/login')} >Login</button>
-        <button  className='sign-btn' onClick={()=>navigate('/login')} >Sign Up</button>
+        <button type='submit' className='sign-btn' >Sign Up</button>
         </div>
       </form>
     </div>
-    </div>
+   
   )
 }
 
