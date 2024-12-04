@@ -20,9 +20,9 @@ const ProductList = () => {
     const newParams = new URLSearchParams(searchParams);
 
     if (value) {
-      newParams.set(key, value); // Add or update the parameter
+      newParams.set(key, value); 
     } else {
-      newParams.delete(key); // Remove the parameter if the value is falsy
+      newParams.delete(key); 
     }
 
     setSearchParams(newParams);
@@ -68,6 +68,7 @@ const ProductList = () => {
       // console.log(filteredData, "filtered data")
     }
   },[category,data])
+
   useEffect(()=>{
     if(search){
       console.log("searching")
@@ -84,9 +85,11 @@ const ProductList = () => {
 
  
   return (
+  
     <div className='banner'>
+        
       <div className='left-section'>
-    <Search data={data} handleSearch={updateSearchParams} />
+    <Search handleSearch={updateSearchParams} />
     <div className='container'>
     {filteredData?.map((product) => {
       
@@ -97,7 +100,10 @@ const ProductList = () => {
     </div>
     <div className='right-section'>
     <Category handleCategoryChange={updateCategoryParams} /></div>
+      
+      
       </div>
+      
      
      
              

@@ -1,0 +1,27 @@
+.theme-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 156px;
+    height: 169px;
+    border: 1px solid #262626;
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.theme-section span{
+    font-size: 24px;
+}
+.theme-section svg{
+    height: 24px;
+    width: 24px;
+    margin-right: 1rem;
+}
+.system-mode{
+    display: flex;
+}
+.light-mode{
+    height: 32px;
+    width: 114;
+}

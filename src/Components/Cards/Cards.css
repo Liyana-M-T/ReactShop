@@ -1,19 +1,19 @@
 
 
 .item{
-    height: 550px;
-    width: 350px;
-    border-radius: 10px;
-    border: 1px solid rgb(184, 170, 170) ;
-    padding: 7%;
+    height: 535px;
+    width: 353px;
+    border-radius: .75rem;
+    border: 1px solid #999999 ;
+    padding: 28px;
 }
 
 .description{
     max-width: 327px;
     font-size: 12px;
     color: gray;
-    margin-bottom: 1.5rem;
-    margin-top: 1rem;    
+    margin-bottom: 20px;
+    margin-top: 0;    
 }
 
 .price-text{
@@ -24,8 +24,9 @@
 
 .title{
     font-size: 20px;
+    margin-top: 28px;
     font-weight: 600;
-    margin-bottom:0
+    margin-bottom:8px;
 }
 .price-tag{
     font-size: 20px;
@@ -36,24 +37,32 @@
     font-weight: 800;
 }
 .category-name{
+    background-color: #e4e4e7;
     border-radius: 15px;
-    font-size: 15px;
-    border: 1px solid ;
-    padding: 2%;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid  rgb(153 153 153);
+    padding: 8px 12px;
     margin-top: 1rem;
 }
 
 .item img{
-    height: 55%;
+    height: 288px;
     width: 100%;
     border-radius: 10px;   
+}
+
+.item img:hover{
+    transform: scale(1.1); 
+  cursor: pointer;
 }
 
 .item button{
     border-radius: 10px;
     color: white;
-    background-color: rgb(11, 5, 79);
-    height: 35px;
+    background-color: #703bf7;
+    border: none;
+    height: 32px;
     padding: 0px 16px;
     font-size: 18px;
 }

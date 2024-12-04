@@ -1,32 +1,39 @@
 .header{
-   top: 0;
-   width: 100%;
-   height: 50px;
-   display: flex;
-   justify-content: space-around;
-   align-items: center; 
-  padding-right:3.5rem;
-  padding-top: 3rem;
-   margin-left: 3rem;
-   
+    top: 0;
+    width: 100%;
+    height: 80px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: relative;
+    padding:  1rem 7rem; 
+    padding-left: 7rem;
+    background-color: #fcfcfc;
+    background-image: url('../../assets/AbstractDesign.svg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+ 
 }
+
 .header-left-section h1{
-    font-size: 45px;
+    font-size: 48px;
+    cursor: pointer;
 }
 .header-center-section{
     display: flex;
     gap: 70px;
     border-radius: 25px;
-    padding: .7rem 4rem;
-    background-color: white;
-    border: 2px solid rgb(197, 191, 191);
+    padding: .6rem 4.2rem;
+    background-color: #fcfcfc;
+    border: 2px solid #999999;
 
 }
 .header-center-section a{
     text-decoration: none;
     color: black;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
 }
 .header-right-section{
     display: flex;
@@ -35,12 +42,29 @@
 }
 .header-right-section button{
     display: flex;
-    gap: 5px;
     color:black;
     background-color: white;
+    border: 1px solid black;
     font-size: 20px;
     font-weight: 600;
-    padding: .5rem;
+    padding: .3rem;
+    padding-bottom: 0;
     border-radius: 5px;
-
+    cursor: pointer;
+}
+.header-line {
+    width: 100%; 
+    height: 1px; 
+   background-color: #262626;
+    position: absolute; 
+    margin: 0;
+  }
+.screen-svg{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.header-FaGithub{
+    width: 1.5rem;
+    height: 1.5rem;
+    color: black;
 }

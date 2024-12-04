@@ -1,0 +1,102 @@
+.footer-section{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.footer-section hr{
+    width: 100%;
+    color: #999999;
+}
+/* .footer-container{
+    display: flex;
+    gap: 8rem;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    
+}
+.footer-terms-container{
+    display: flex;
+    gap: 4rem;
+}
+.footer-container .link{
+    color: #1a1a1a; 
+    font-size: 14px;
+  transition: all 150ms ease-in-out;
+  text-decoration: none;
+ 
+}
+.footer-container .link:hover{
+    text-decoration: underline;
+    color: #cccccc;
+    transition: all 150ms ease-in-out; 
+}
+.footer-terms h6{
+    font-size: 16px;
+    margin-bottom: 8px;
+    margin-top: 0;
+    color: #8261f9;
+}
+.footer-terms p{
+    max-width: 276px;
+    font-size: 14px;
+}
+.footer-terms .text-box{
+    display: flex;
+}
+.footer-terms .text-box input{
+    color: #9caccb;
+    border: none;
+    padding: 16px 48px 16px 12px;
+}
+.text-box input[type="text"]:focus{
+    outline: none;
+}
+.footer-terms .text-box hr{
+    background-color: #999999;
+    margin: 8px 0px 8px -1px;
+    width: 0;
+    height: 1rem;
+}
+.footer-terms .text-box button{
+    border: none;
+    margin: 0px 12px;
+}
+.footer-terms li{
+   color:#1a1a1a;
+   font-size: 14px;
+    list-style: none;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.footer-terms .list:hover{
+    color: #1a1a1a; 
+  transition: all 150ms ease-in-out;
+}
+.arrowsvg{
+    height: .75rem;
+    width: .75rem;
+} */
+.footer-bottom-section{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2.5rem 0rem 5.5rem;
+}
+.footer-bottom-section .bottom-left span{
+    color: #8254f8;
+}
+.footer-bottom-section .bottom-left a{
+    text-decoration: none;
+    color: #8254f8;
+    font-size: 14px;
+}
+.bottom-left a:hover{
+    text-decoration: underline;
+}
+.FaGithub{
+color: black;
+width: 2rem;
+height: 2rem;
+cursor: pointer;
+}

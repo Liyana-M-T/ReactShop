@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { login_url } from '../../Urls';
+import Cookies from 'js-cookie';
+
+
 
 
 const EMAIL_REGEX=/^[a-zA-Z][a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
@@ -39,6 +42,8 @@ const Login = () => {
 
     const handleLogin = async (e) => {
       e.preventDefault();
+
+
       const formdata={
         "email": email,
         "password": password
@@ -53,13 +58,19 @@ const Login = () => {
           login_url,
           formdata
         );
-        console.log(response,'22');
-        
+     console.log(response.data,'hello');
+     
         if (response.status===201) {
           alert('Login successful');
+          console.log( Cookies.set("access_token",response.data.refresh_token),"kil");
+          
+          Cookies.set("access_token",response.data.access_token)
+          Cookies.set("refresh_token",response.data.refresh_token)
           navigate('/');
         }
-      } catch (err) {
+        Cookies.set('')
+
+      } catch{
        
         alert('An error occurred during login.');
       }
@@ -68,6 +79,7 @@ const Login = () => {
     
 
   return (
+   
     <div className='login-form'> 
       <form action="Login" onSubmit={handleLogin} >
       <h4>Login</h4>
@@ -107,6 +119,7 @@ const Login = () => {
         </div>
       </form>
     </div>
+  
   )
 }
 

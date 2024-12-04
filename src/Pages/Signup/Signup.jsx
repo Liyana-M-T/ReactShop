@@ -7,6 +7,7 @@ import axios from 'axios';
 import { signup_url } from '../../Urls';
 
 
+
 const Signup = () => {
 
 const EMAIL_REGEX=/^[a-zA-Z][a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
@@ -14,9 +15,9 @@ const PWD_REGEX=/^.{8,24}$/;
 const AVATAR_URL_REGEX = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(\/.*)?$/;
 
 
-const navigate=useNavigate();
+const navigate = useNavigate();
 
-const [name,setName]=useState('');
+const [name,setName] = useState('');
 
 const [email,setEmail]=useState('');
 const[validEmail,setValidEmail]=useState(false);
@@ -37,7 +38,7 @@ const [validAvatar,setValidAvatar]=useState(false)
    const result = EMAIL_REGEX.test(email);
    setValidEmail(result)
    
-  },[email])
+  },[])
 
   useEffect(()=>{
     const pwd=PWD_REGEX.test(password);
@@ -74,14 +75,15 @@ const [validAvatar,setValidAvatar]=useState(false)
   };
 
   return (
-    
+
     <div className='Sigup-form'> 
       <form action="Signup" onSubmit={handleSignup}  >
       <h4>SignUp</h4>
-    
+      <div className="signup-sections">
+      <div className="input-container-div">
       <label htmlFor='Name'>Name</label>
-      <input id='Name' type='text' onChange={(e)=>setName(e.target.value)}/>
-      <div className='email-form'>
+      <input id='Name' type='text' onChange={(e)=>setName(e.target.value)}/></div>
+      <div className="input-container-div">
       <label htmlFor='email'>Email Address</label>
         <input id='email' type="text" onChange={(e)=>
         setEmail(e.target.value)
@@ -98,8 +100,12 @@ const [validAvatar,setValidAvatar]=useState(false)
           </p>
           )}
           
+         
           </div>
-        
+        <div className="input-container-div">
+          <label htmlFor='avatar'>Avatar</label>
+          <input type='text' onChange={(e)=>setAvatar(e.target.value)}></input></div>
+        <div className="input-container-div">
         <label htmlFor='password'>Password</label>
         <input id='password' type='password'
         onChange={(e)=>setPassword(e.target.value)}
@@ -108,22 +114,25 @@ const [validAvatar,setValidAvatar]=useState(false)
           onBlur={()=>setPasswordFocus(false)}
           />
           {PasswordFocus && password && !validPassword&&(
-            <p>*Must be 8 characters or more</p>
-          )}
+            <p className='validation-msg'>*Must be 8 characters or more</p>
+          )} 
 
-          <label htmlFor='avatar'>Avatar</label>
-          <input type='text' onChange={(e)=>setAvatar(e.target.value)}></input>
+</div>
+        </div>
           
     
      
 
 
        <div className='btns'>
-        <button  className='login-btn' onClick={()=>navigate('/login')} >Login</button>
+       
         <button type='submit' className='sign-btn' >Sign Up</button>
+        <button  className='login-btn' onClick={()=>navigate('/login')} >Login</button>
+
         </div>
       </form>
     </div>
+   
    
   )
 }
