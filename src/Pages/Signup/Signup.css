@@ -52,6 +52,7 @@
    padding: 1rem;
 }
 .Sigup-form label{
+    display: flex;
     font-size: 18px;
     font-weight: 600;
     color: black;

@@ -8,7 +8,7 @@ const ImageSlider = ({imageList}) => {
   return (
     <div className='image-container'>
       <div className='image-list'>
-       {imageList?.map((image,index)=>(
+       {imageList?.slice(0,3).map((image,index)=>(
         <img src={image} key={index} onClick={()=>setImageIndex(index)}
         className={imageIndex === index ? "image-list img opacity-30" : "image-list img"} 
         />

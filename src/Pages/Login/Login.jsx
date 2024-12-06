@@ -1,5 +1,5 @@
 import React,{useState,useEffect,userRef, useRef} from 'react'
-import './login.css'
+import './Login.css'
 import {faCheck,faTimes,faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
@@ -68,7 +68,6 @@ const Login = () => {
           Cookies.set("refresh_token",response.data.refresh_token)
           navigate('/');
         }
-        Cookies.set('')
 
       } catch{
        
@@ -93,7 +92,7 @@ const Login = () => {
         onFocus={()=>setEmailFocus(true)}
         onBlur={()=>setEmailFocus(false)}
         />
-        {PasswordFocus && email && !validEmail &&( 
+        {!emailFocus && email && !validEmail &&( 
           <p className='validation-msg'>
             <FontAwesomeIcon icon={faInfoCircle}/>
             Invalid Email address

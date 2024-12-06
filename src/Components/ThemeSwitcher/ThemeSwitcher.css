@@ -3,6 +3,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 6%;
+    top: 27%;
+    background-color:  #ffffff;
     width: 156px;
     height: 169px;
     border: 1px solid #262626;
@@ -20,8 +24,11 @@
 }
 .system-mode{
     display: flex;
+    cursor: pointer;
 }
 .light-mode{
-    height: 32px;
-    width: 114;
+    cursor: pointer;
+}
+.dark-mode{
+    cursor: pointer;
 }

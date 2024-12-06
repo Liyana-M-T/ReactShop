@@ -11,15 +11,18 @@ import { useNavigate } from 'react-router-dom'
 const DetailPage = () => {
   const navigate=useNavigate()
     const[product,setProduct]=useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const {id}=useParams();
+    const {id, category } = useParams();
     
+    params = {
+      id: 56,
+      category: "old"
+    }
+
     useEffect(() => {
       axios.get(product_url+id).then((response)=>{
         setProduct(response.data);
       })
-         
+  
     }, [id]);
   
     

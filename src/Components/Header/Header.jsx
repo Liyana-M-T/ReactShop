@@ -4,6 +4,7 @@ import './Header.css';
 import { FaGithub } from 'react-icons/fa';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'; 
 
+
 const Header = () => {
   const navigate = useNavigate();
   const [showThemeSwitcher, setShowThemeSwitcher] = useState(false); 
@@ -87,8 +88,8 @@ const Header = () => {
         </div>
       </div>
       <hr className="header-line" />
-      {/* {showThemeSwitcher && <ThemeSwitcher />} */}
-      <ThemeSwitcher />
+      {showThemeSwitcher && <ThemeSwitcher />}
+      
     
     </div>
   );

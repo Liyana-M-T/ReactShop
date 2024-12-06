@@ -28,6 +28,9 @@
     font-weight: 600;
     margin-bottom:8px;
 }
+.title-expand{
+    cursor: pointer;
+}
 .price-tag{
     font-size: 20px;
     font-weight: 600;
@@ -35,6 +38,7 @@
 }
 .description span{
     font-weight: 800;
+    cursor: pointer;
 }
 .category-name{
     background-color: #e4e4e7;
