@@ -66,9 +66,11 @@
 }
 .login-btn{
     background-color: #703bf7;
+    cursor: pointer;
 }
 .sign-btn{
     background-color: rgb(49, 47, 47);
+    cursor: pointer;
 }
 .validation-msg{
     margin: 0;

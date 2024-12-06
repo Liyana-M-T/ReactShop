@@ -17,10 +17,11 @@ const ProtectedRoute = ({ children }) => {
 
   if (!jwtPayload) {
     return <Navigate to="/login" />;
+  } else{
+    return children;
   }
  
-  return children
-  // return <Navigate to="/" />;
+
 };
 
 function App() {
