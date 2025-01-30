@@ -4,11 +4,10 @@ import './Category.css'
 
 const Category = ({ handleCategoryChange }) => {
   const[active,setActive]=useState("all");
-   const onClick=(Category)=>{
+    const onClick=(Category)=>{
     handleCategoryChange('category',Category)
     setActive(Category)
-   
-   }
+    }
   
 
   return (
@@ -49,7 +48,7 @@ const Category = ({ handleCategoryChange }) => {
           Miscellaneous
         </li>
       </ul>
-      </div>
+    </div>
   );
 };
 

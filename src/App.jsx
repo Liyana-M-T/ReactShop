@@ -1,15 +1,12 @@
 import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import './App.css';
 import Login from './Pages/Login/Login';
 import Products from './Pages/Products/products';
 import Signup from './Pages/Signup/Signup';
-import Home from './Pages/Home/Home';
-import About from './Pages/About/About';
 import DetailPage from './Pages/DetailPage/DetailPage';
 
-// Protected Route Component
+
 const ProtectedRoute = ({ children }) => {
   
   const jwtPayload = Cookies.get('access_token');
@@ -20,8 +17,6 @@ const ProtectedRoute = ({ children }) => {
   } else{
     return children;
   }
- 
-
 };
 
 function App() {
@@ -47,8 +42,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
       </Routes>
     </>
   );

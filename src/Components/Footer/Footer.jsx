@@ -40,7 +40,6 @@ const Footer = () => {
         <li> Company values</li>
         <li>   Pricing</li>
         <li>  Privacy Policy</li>
-
        </div>
       
        <div className="footer-terms">

@@ -17,7 +17,7 @@ const Cards = ({key,product}) => {
 
   return (
     
-      <div className='item'>
+    <div className='item'>
         <img src={product?.images} alt="" onClick={()=>navigate(`/products/${product.id}`)} /> 
             <p className='title'>
             {titleExpand? product?.title : `${product?.title?.slice(0,26)|| ""}`}
@@ -37,12 +37,10 @@ const Cards = ({key,product}) => {
                 <div className='price'>
                     <p className='price-text'>Price</p>
                     <p className='price-tag'>${product?.price}</p>
-        </div>
-        <button>Add To Cart</button>
-         </div>
-
-         
-         </div>
+                </div>
+                  <button>Add To Cart</button>
+            </div>
+    </div>
             
   )
 }

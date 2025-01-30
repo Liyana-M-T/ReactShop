@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Header.css';
 import { FaGithub } from 'react-icons/fa';
-import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'; 
-
 
 const Header = () => {
-  const navigate = useNavigate();
-  const [showThemeSwitcher, setShowThemeSwitcher] = useState(false); 
+  const navigate = useNavigate(); 
 
   return (
     <div className="">
@@ -59,10 +56,7 @@ const Header = () => {
             </svg>
             Sign Up
           </button>
-          <button
-            onClick={() => setShowThemeSwitcher(!showThemeSwitcher)} 
-          >
-          
+          <button>
             <svg
               className="screen-svg"
               stroke="#0ea5e9"
@@ -88,9 +82,6 @@ const Header = () => {
         </div>
       </div>
       <hr className="header-line" />
-      {showThemeSwitcher && <ThemeSwitcher />}
-      
-    
     </div>
   );
 };

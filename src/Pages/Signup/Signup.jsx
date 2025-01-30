@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Signup.css";
-import {
-  faCheck,
-  faTimes,
-  faInfoCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import {faCheck,faTimes,faInfoCircle} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -13,15 +9,13 @@ import { IoInformationCircle } from "react-icons/io5";
 import Tooltip from "@mui/material/Tooltip";
 
 const Signup = () => {
+
   const EMAIL_REGEX = /^[a-zA-Z][a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
   const PWD_REGEX = /^.{8,24}$/;
-  const AVATAR_URL_REGEX =
-    /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(\/.*)?$/;
+  const AVATAR_URL_REGEX =/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(\/.*)?$/;
 
   const navigate = useNavigate();
-
   const [name, setName] = useState("");
-
   const [email, setEmail] = useState("");
   const [validEmail, setValidEmail] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);

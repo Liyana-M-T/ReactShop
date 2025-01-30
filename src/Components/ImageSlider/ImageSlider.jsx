@@ -3,7 +3,6 @@ import './ImageSlider.css'
 
 const ImageSlider = ({imageList}) => {
   const[imageIndex,setImageIndex]=useState(0);
-  console.log(imageList,"imageList");
   
   return (
     <div className='image-container'>
@@ -13,8 +12,6 @@ const ImageSlider = ({imageList}) => {
         className={imageIndex === index ? "image-list img opacity-30" : "image-list img"} 
         />
       ))}
-       
-      
       </div>
       <div className='main-image'>
         <img src={imageList?.[imageIndex]}/>

@@ -24,12 +24,11 @@ const ProductList = () => {
     } else {
       newParams.delete(key); 
     }
-
     setSearchParams(newParams);
   };
   
  const updateCategoryParams = (key,value)=>{
-  const params= new URLSearchParams(searchParams);
+ const params= new URLSearchParams(searchParams);
 
   if(value){
     params.set(key,value);
@@ -39,12 +38,6 @@ const ProductList = () => {
   setSearchParams(params)
   }
  
- 
- 
-
-  
-
-
   useEffect(()=>{
      axios.get(product_url).then((response)=>{
       setData(response.data)
@@ -60,12 +53,9 @@ const ProductList = () => {
           return products
         }
       })
-       console.log(filter, "filterrr");
-       
       setFilteredData(filter)
     } else {
       setFilteredData(data);
-      // console.log(filteredData, "filtered data")
     }
   },[category,data])
 
@@ -83,36 +73,20 @@ const ProductList = () => {
     }
   },[search])
 
- 
   return (
   
-    <div className='banner'>
-        
-      <div className='left-section'>
-    <Search handleSearch={updateSearchParams} />
-    <div className='container'>
-    {filteredData?.map((product) => {
-      
-  return <Cards key={product.id} product={product} />;
+  <div className='banner'>  
+     <div className='left-section'>
+     <Search handleSearch={updateSearchParams} />
+     <div className='container'>
+     {filteredData?.map((product) => {
+     return <Cards key={product.id} product={product} />;
      })}
     </div>
-    
     </div>
     <div className='right-section'>
     <Category handleCategoryChange={updateCategoryParams} /></div>
-      
-      
-      </div>
-      
-     
-     
-             
-             
-       
-    
-     
-     
-    
+  </div>  
   )
 }
 

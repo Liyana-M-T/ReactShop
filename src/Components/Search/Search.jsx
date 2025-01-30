@@ -8,7 +8,6 @@ const Search = ({handleSearch} ) => {
   setInput(e.target.value) 
   }
  
- 
 
   return (
     
@@ -23,8 +22,7 @@ const Search = ({handleSearch} ) => {
           id="search"
           x="0px"
           y="0px"
-          viewBox="0 0 24 24"
-         
+          viewBox="0 0 24 24"  
         style={{ backgroundColor: "#703BF7" }}
           height=".5em"
           width=".5em"

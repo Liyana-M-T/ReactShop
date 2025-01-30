@@ -1,11 +1,9 @@
-
 .categories{
     display: flex;
     gap: 10px;
     align-items: center;
     padding-left: .5rem;
-    padding-top: 1.3rem;
-   
+    padding-top: 1.3rem;  
 }
 .categories-hdg{
     font-weight: 500;
@@ -18,17 +16,13 @@
 .active-style {
     background-color: #c4b5fd; 
     border-left: 3px solid #a78bfa;
-    
-  }
+}
 .category-lists li{
-    font-size: 18px;
+   font-size: 18px;
    background-color: rgba(88, 79, 79, .2);
    padding: .5rem 1rem;
    margin-bottom: 10px ;
    cursor: pointer;
    list-style:  none;
    background: linear-gradient(to right, #e4e4e7, transparent);
- 
- 
-   
 }
